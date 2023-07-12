@@ -11,25 +11,29 @@ function getColorDie() {
     const randomNumber = Math.floor(Math.random() * 6) + 1;
     const colorDie = colors[randomNumber];
     
-    console.log("Random Number:", randomNumber);
-    console.log("Mapped Value:", colorDie);
-
     return colorDie;
 }
 
 function getNumberDie() {
     const numberDie = Math.floor(Math.random() * 6) + 1;
-    
-    console.log("Mapped Value:", numberDie);
 
     return (numberDie == 6) ? "Joker" : numberDie;
 }
 
 function rollDice() {
-    for (let i = 0; i < 3; i++) {
+    const diceArray = Array.from(document.querySelectorAll('.dice'));
+
+    let i = 0;
+    for (i; i < 3; i++) {
         // map getColorDie to the first three divs
+        diceArray[0].innerHTML = getColorDie();
+        diceArray[1].innerHTML = getColorDie();
+        diceArray[2].innerHTML = getColorDie();
     }
-    for (let i = 0; i < 3; i++) {
+    for (i; i < 6; i++) {
         // map getNumberDie to the last three divs
+        diceArray[3].innerHTML = getNumberDie();
+        diceArray[4].innerHTML = getNumberDie();
+        diceArray[5].innerHTML = getNumberDie();
     }
 }

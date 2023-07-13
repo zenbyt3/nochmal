@@ -1,9 +1,9 @@
 function getColorDie() {
     const colors = {
-      1: "Green",
-      2: "Blue",
-      3: "Pink",
-      4: "Yellow",
+      1: "Grün",
+      2: "Blau",
+      3: "Rosa",
+      4: "Gelb",
       5: "Orange",
       6: "Joker"
     };

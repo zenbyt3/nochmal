@@ -11,8 +11,37 @@ body {
 }
 
 .dice {
-    border: 1px solid black;
+    display: flex;
     margin: 0.5rem;
     width: 300px;
     height: 300px;
+    font-size: 4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    justify-content: space-around;
 }
+
+button {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    color: white;
+    width: 200px;
+    height: 100px;
+    background: skyblue;
+    position: relative;
+    margin: 30px;
+    top: 100px;
+    padding: 16px;
+    font-size: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 15px 0px 0px darken(skyblue, 5%), 0px 0px 20px 0px #bbb;
+  
+    transition: all 0.2s;
+}
+
+a {
+    
+}
+  

@@ -1,11 +1,18 @@
+const green = ("./images/green.png");
+const yellow = ("./images/yellow.png");
+const blue = ("./images/blue.png");
+const pink = ("./images/pink.png");
+const orange = ("./images/orange.png");
+const joker = ("./images/joker.png");
+
 function getColorDie() {
     const colors = {
-      1: "Grün",
-      2: "Blau",
-      3: "Rosa",
-      4: "Gelb",
-      5: "Orange",
-      6: "Joker"
+      1: yellow,
+      2: blue,
+      3: green,
+      4: pink,
+      5: orange,
+      6: joker
     };
 
     const randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -21,19 +28,13 @@ function getNumberDie() {
 }
 
 function rollDice() {
-    const diceArray = Array.from(document.querySelectorAll('.dice'));
+    // map getColorDie to the first three divs
+    document.getElementById("d1").src = getColorDie();
+    document.getElementById("d2").src = getColorDie();
+    document.getElementById("d3").src = getColorDie();
 
-    let i = 0;
-    for (i; i < 3; i++) {
-        // map getColorDie to the first three divs
-        diceArray[0].innerHTML = getColorDie();
-        diceArray[1].innerHTML = getColorDie();
-        diceArray[2].innerHTML = getColorDie();
-    }
-    for (i; i < 6; i++) {
-        // map getNumberDie to the last three divs
-        diceArray[3].innerHTML = getNumberDie();
-        diceArray[4].innerHTML = getNumberDie();
-        diceArray[5].innerHTML = getNumberDie();
-    }
-}
+    // map getNumberDie to the last three divs
+    document.getElementById("d4").innerHTML = getNumberDie();
+    document.getElementById("d5").innerHTML = getNumberDie();
+    document.getElementById("d6").innerHTML = getNumberDie();
+}   

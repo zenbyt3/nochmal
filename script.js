@@ -5,6 +5,13 @@ const pink = ("./images/pink.png");
 const orange = ("./images/orange.png");
 const joker = ("./images/joker.png");
 
+const one = ("./images/one.png");
+const two = ("./images/two.png");
+const three = ("./images/three.png");
+const four = ("./images/four.png");
+const five = ("./images/five.png");
+const numberJoker = ("./images/numberjoker.png");
+
 function getColorDie() {
     const colors = {
       1: yellow,
@@ -22,9 +29,18 @@ function getColorDie() {
 }
 
 function getNumberDie() {
-    const numberDie = Math.floor(Math.random() * 6) + 1;
+    const numbers = {
+        1: one,
+        2: two,
+        3: three,
+        4: four,
+        5: five,
+        6: numberJoker
+      };
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+    const numberDie = numbers[randomNumber];
 
-    return (numberDie == 6) ? "Joker" : numberDie;
+    return numberDie;
 }
 
 function rollDice() {
@@ -34,7 +50,7 @@ function rollDice() {
     document.getElementById("d3").src = getColorDie();
 
     // map getNumberDie to the last three divs
-    document.getElementById("d4").innerHTML = getNumberDie();
-    document.getElementById("d5").innerHTML = getNumberDie();
-    document.getElementById("d6").innerHTML = getNumberDie();
+    document.getElementById("d4").src = getNumberDie();
+    document.getElementById("d5").src = getNumberDie();
+    document.getElementById("d6").src = getNumberDie();
 }   

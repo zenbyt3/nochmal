@@ -1,3 +1,3 @@
 # nochmal
 
-This rolls some die for a game.
+This rolls some dice for a game.

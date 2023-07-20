@@ -40,7 +40,6 @@ html = """
 </html>
 """
 
-
 class ConnectionManager:
     def __init__(self):
         self.active_connections: list[WebSocket] = []
@@ -59,14 +58,11 @@ class ConnectionManager:
         for connection in self.active_connections:
             await connection.send_text(message)
 
-
 manager = ConnectionManager()
-
 
 @app.get("/")
 async def get():
     return HTMLResponse(html)
-
 
 @app.websocket("/ws/{client_id}")
 async def websocket_endpoint(websocket: WebSocket, client_id: int):
